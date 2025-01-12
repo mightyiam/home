@@ -48,6 +48,8 @@
       };
     };
 
+    nixos-facter-modules.url = "github:numtide/nixos-facter-modules";
+
     nixpkgs.url = "nixpkgs/nixpkgs-unstable";
 
     nixvim = {
