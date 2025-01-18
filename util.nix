@@ -16,10 +16,7 @@ let
       if val ? drvPath then
         "«what is this undocumented derivationStrict?»"
       else
-        lib.mapAttrs (
-          name: value:
-          if (lib.traceVal name) == "message" then "«missing attribute workaround»" else toJSONLossy value
-        ) val
+        lib.mapAttrs (name: value: toJSONLossy value) val
     else if lib.isList val then
       map toJSONLossy val
     else
