@@ -2,7 +2,7 @@
 {
   imports = with self.modules.nixos; [
     desktop
-    self.inputs.nixos-facter-modules.nixosModules.facter
+    facter
     swap
     ./state-version.nix
   ];

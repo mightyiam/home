@@ -1,5 +1,7 @@
 { pkgs, ... }:
 {
+  facter.detected.dhcp.enable = false;
+
   networking = {
     wireless.iwd = {
       enable = true;
