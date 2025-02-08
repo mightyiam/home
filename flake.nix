@@ -127,12 +127,16 @@
 
   outputs =
     inputs:
+    let
+      util = import ./util.nix inputs;
+    in
     inputs.flake-parts.lib.mkFlake
       {
         inherit inputs;
-        specialArgs.util = import ./util.nix inputs;
+        specialArgs = { inherit util; };
       }
       {
+        flake = { inherit util; };
         imports = [
           ./boot-message.nix
           ./catppuccin.nix
